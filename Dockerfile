@@ -1,8 +1,10 @@
-FROM golang
+FROM golang:latest
 
-ADD . /go/src/gdemost
+WORKDIR /go/src/gdemost
+COPY . .
 
-RUN go install gdemost@latest
+RUN go mod tidy
+RUN go install gdemost
 
 ENTRYPOINT /go/bin/gdemost
 
