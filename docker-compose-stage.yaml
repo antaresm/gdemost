@@ -17,7 +17,9 @@ services:
     volumes:
       - "./data:/var/lib/mysql"
   app:
-    image: registry.handh.ru/gdemost/back:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     restart: always
     ports:
       - "1235:1235"
