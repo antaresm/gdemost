@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+	println("Hello bridges!")
 
 	r := mux.NewRouter()
 	//r.PathPrefix("/media/").Handler(http.StripPrefix("/media/", http.FileServer(http.Dir("./media/"))))

@@ -1,10 +1,15 @@
 package config
 
-import "os"
+import (
+	"os"
+	"time"
+)
 
 var DbString string
 
 func init() {
+	time.Sleep(5 * time.Second)
+	println("Hello bridges db config!")
 
 	DbString = os.Getenv("MYSQL_USER") + ":" +
 		os.Getenv("MYSQL_PASSWORD") + "@tcp(" +

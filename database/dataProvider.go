@@ -17,6 +17,8 @@ var once sync.Once
 var DataInstance *dataProvider
 
 func init() {
+	println("Hello bridges db!")
+
 	newDB := getDB(config.DbString)
 
 	once.Do(func() {
