@@ -1,0 +1,5 @@
+* Golang REST API Example *
+
+** Run **
+- docker-compose up db (Ctrl+C after init db)
+- docker-compose up -d (Start service daemon)
