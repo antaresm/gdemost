@@ -1,8 +1,8 @@
 package adminConf
 
 import (
+	"gdemost/bindatafs"
 	"gdemost/config"
-	"gdemost/config/bindatafs"
 	"gdemost/models"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
@@ -25,6 +25,7 @@ func InitAdmin() *http.ServeMux {
 	Admin := admin.New(&admin.AdminConfig{DB: DB})
 
 	Admin.SetAssetFS(bindatafs.AssetFS.NameSpace("admin"))
+	//bindatafs.AssetFS.Compile()
 
 	Admin.AddResource(&models.Bridge{}, &admin.Config{
 		Menu: []string{"Мосты"},

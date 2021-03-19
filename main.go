@@ -2,9 +2,9 @@ package main
 
 import (
 	"gdemost/adminConf"
+	_ "gdemost/bindatafs"
 	"gdemost/handlers"
 	"github.com/gorilla/mux"
-	_ "github.com/gorilla/mux"
 	"net/http"
 )
 

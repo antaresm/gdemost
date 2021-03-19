@@ -1,14 +1,10 @@
-FROM golang:latest
+FROM golang:1.16.2
 
 WORKDIR /go/src/gdemost
-ADD . .
+COPY . .
 
-RUN go mod tidy
+RUN go mod download
+RUN go build -tags bindatafs main.go
+RUN go install -tags bindatafs main.go
 
-RUN GO111MODULE=off go get -u -f github.com/qor/bindatafs/...
-RUN bindatafs config/bindatafs
-
-RUN go install gdemost
-
-ENTRYPOINT /go/bin/gdemost
-
+ENTRYPOINT ["/go/bin/main", "-tags", "bindatafs"]
