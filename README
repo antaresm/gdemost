@@ -4,6 +4,6 @@
 - docker-compose up db (Ctrl+C after init db)
 - docker-compose up -d (Start service daemon)
 
-** Use **
+** Usage **
 - service_url:1235/bridges (API endpoint)
 - service_url:125/admin (Admin panel)
